@@ -1,0 +1,41 @@
+/* Establece un estilo base para el HTML y el cuerpo */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  /* Asegura que no haya márgenes predeterminados */
+  padding: 0;
+  /* Asegura que no haya relleno predeterminado */
+  font-family: 'Manrope', sans-serif;
+  /* Establece la fuente principal */
+}
+
+/* Personalización para el componente model-viewer */
+model-viewer {
+  --poster-color: #e2e8f0;
+  --progress-bar-color: rgba(30, 41, 59, 0.5);
+  --progress-bar-height: 10px;
+}
+
+/* Estilo para elementos con el atributo data-color */
+[data-color]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  /* Ajusta el desplazamiento superior e inferior */
+  bottom: -5px;
+  left: -5px;
+  /* Ajusta el desplazamiento izquierdo y derecho */
+  right: -5px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  /* Usa 50% para un borde circular */
+}
+
+/* Estilo activo para elementos con el atributo data-color */
+[data-color].active::before,
+[data-color]:focus::before {
+  border-color: white;
+}
